@@ -1,0 +1,23 @@
+body {
+  overflow-x: hidden;
+}
+
+#self {
+  color: red;
+}
+
+#connected {
+  color: lightgreen;
+}
+
+.btn {
+  margin-top: 10px;
+}
+
+.comments {
+  margin-top: 20px;
+}
+
+#chatSection {
+  display: none;
+}

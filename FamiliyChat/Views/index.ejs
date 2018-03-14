@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Family Chat</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/sidebar.css">
+
+</head>
+
+<body>
+  <!-- Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="bar"></div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- home -->
+    <div id="home"></div>
+    <!-- /#home-->
+
+    <!-- chat -->
+    <div id="chatSection"></div>
+    <!-- /#chat -->
+
+    <!-- /Wrapper -->
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+<script type="text/javascript">
+  $('#bar').load('Views/sidebar.ejs');
+  $('#home').load('Views/home.ejs');
+  $('#chatSection').load('Views/chat.ejs');
+</script>
+
+</html>
