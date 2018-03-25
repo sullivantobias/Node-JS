@@ -20,10 +20,10 @@ io.sockets.on('connection', function(socket) {
     socket.pseudo = name;
 
     allClients.push(socket.pseudo)
-
     socket.broadcast.emit('user_connected', allClients);
     socket.emit('selfConnected', socket.pseudo);
   });
+
   socket.on('comments', function(comment, name) {
 
     socket.broadcast.emit('sendingComments', comment, name);
@@ -33,7 +33,6 @@ io.sockets.on('connection', function(socket) {
   socket.on('disconnect', function() {
 
     allClients.splice(allClients.indexOf(socket.pseudo), 1);
-
     socket.broadcast.emit('user_update', allClients);
   })
 })

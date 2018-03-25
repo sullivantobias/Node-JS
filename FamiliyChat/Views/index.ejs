@@ -43,6 +43,13 @@
   $('#bar').load('Views/sidebar.ejs');
   $('#home').load('Views/home.ejs');
   $('#chatSection').load('Views/chat.ejs');
+
+
+  $(function() {
+    var wtf = $('#commentsSection');
+    var height = wtf[0].scrollHeight;
+    wtf.scrollTop(height);
+  });
 </script>
 
 </html>

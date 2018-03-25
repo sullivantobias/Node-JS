@@ -20,34 +20,70 @@ $(document).ready(function() {
     e.preventDefault();
     var textSection = document.querySelector('#textSection').value;
     var self = document.querySelector('#self').textContent;
+
     socket.emit('comments', textSection, self);
 
   })
 
   var sectionComments = document.querySelector('#commentsSection');
+
   socket.on("sendingComments", function(messages, name) {
 
     //Create Elements Section //
     var divComments = document.createElement('div');
     var br = document.createElement('br');
     var br2 = document.createElement('br');
-    var br3 = document.createElement('br')
-    var pMessages = document.createElement('p').innerHTML = messages;
-    var pSender = document.createElement('p').innerHTML = name + ": ";
+    var pMessages = document.createElement('div');
+    var pSender = document.createElement('div');
     // Adding Bootstrap Class to the main Div
-    divComments.className = "col-md-12 text-center";
+    pSender.className = "sender";
+    pMessages.className = "message";
+
+    pMessages.innerHTML = messages;
+    pSender.innerHTML = name;
+    divComments.className = "col-md-6 offset-md-3 text-center msgArea";
     // Insert paragraph in the main div //
     sectionComments.append(divComments);
+
     divComments.append(pSender);
     // Back to line
-    divComments.append(br);
     divComments.append(pMessages);
     divComments.append(br2);
-    divComments.append(br3);
+
+
+    document.querySelector('#textSection').value = "";
+    // Scroll Bar always at the bottom
+    sectionComments.scrollTop = sectionComments.scrollHeight;
 
   })
 
   socket.on("allComments", function(messages, name) {
+
+    //Create Elements Section //
+    var divComments = document.createElement('div');
+    var br = document.createElement('br');
+    var br2 = document.createElement('br');
+    var pMessages = document.createElement('div');
+    var pSender = document.createElement('div');
+    // Adding Bootstrap Class to the main Div
+    pSender.className = "yourself";
+    pMessages.className = "message";
+
+    pMessages.innerHTML = messages;
+    pSender.innerHTML = name;
+    divComments.className = "col-md-6 offset-md-3 text-center msgArea";
+    // Insert paragraph in the main div //
+    sectionComments.append(divComments);
+
+    divComments.append(pSender);
+    // Back to line
+    divComments.append(pMessages);
+    divComments.append(br2);
+
+    document.querySelector('#textSection').value = "";
+
+    // Scroll Bar always at the bottom
+    sectionComments.scrollTop = sectionComments.scrollHeight;
 
   })
 

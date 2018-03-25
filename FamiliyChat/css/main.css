@@ -21,3 +21,43 @@ body {
 #chatSection {
   display: none;
 }
+
+#commentsSection {
+  background: lightslategrey;
+  border: 2px solid;
+  border-radius: 20px;
+  max-height: 450px;
+  overflow: scroll;
+}
+
+::-webkit-scrollbar {
+  background: transparent;
+  width: 0;
+}
+
+.sender {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.yourself {
+  color: lightseagreen;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.message {
+  color: blue;
+  font-family: Arial;
+  font-size: 17px;
+  overflow: hidden;
+  text-align: justify;
+  word-wrap: break-word;
+}
+
+.msgArea {
+  background: lightgrey;
+  border: 1px solid;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
